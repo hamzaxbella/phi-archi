@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .max-container {
+    max-width: 1240px;
+    margin : 0 auto;
+  }
+}
+
+@layer utilities {
+  .padding-y {}
+  .padding-x {}
+  .padding {}
+  .margin-x {}
+  .margin-y {}
+  .margin {}
+  .section-spacing {}
+}
