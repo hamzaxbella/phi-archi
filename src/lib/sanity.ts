@@ -11,6 +11,6 @@ export const client = createClient({
 
 // converting images to url.
 const builder = ImageUrlBuilder(client);
-export function urlFor(source : any) { // eslint-disable-line @typescript-eslint/no-explicit-any
+export function urlFor(source: string | object) {
     return builder.image(source)
 }

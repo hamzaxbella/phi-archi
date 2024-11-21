@@ -1,7 +1,8 @@
 import { client } from "../lib/sanity";
+import { Locale, SanityProject } from "../lib/interface";
 
 // create an async function to fetch project from sanity
-const getProject = async (locale: string) => {
+const getProject = async (locale: Locale): Promise<SanityProject[]> => {
   try {
     const query = `
       * [_type == 'project'] {
@@ -19,9 +20,9 @@ const getProject = async (locale: string) => {
   }
 };
 
-export default async function Tester({ locale }: { locale: string }) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const projects: any[] = await getProject(locale);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Tester({ locale }: { locale: any }) {
+  const projects = await getProject(locale);
   console.log(projects[0].title);
 
   return projects ? (
