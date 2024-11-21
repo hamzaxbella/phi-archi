@@ -9,17 +9,15 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  params: { locale: any }; // Use `any` to avoid strict checking
 }) {
-  // Await the params object to resolve dynamic params
-  const { locale } = await params; // Await the params to resolve the dynamic value
-  
-  // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  const { locale } = params as { locale: "fr" | "en" | "ar" }; // Assert type explicitly
+
+  if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Set the locale for the request
   setRequestLocale(locale);
 
   return (
@@ -28,9 +26,7 @@ export default async function LocaleLayout({
         <header>
           <LanguageSwitcher />
         </header>
-        <NextIntlClientProvider>
-          {children}
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 import { Link } from '@/i18n/routing';
-import { setRequestLocale } from 'next-intl/server';
 import Tester from '@/components/Tester';
 
 export default async function HomePage({ params }: { params: { locale: string } }) {
