@@ -1,4 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
+import { LocaleParams } from '@/lib/interface';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
@@ -9,10 +10,9 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  params: { locale: any }; // Use `any` to avoid strict checking
+  params: LocaleParams;
 }) {
-  const { locale } = params as { locale: "fr" | "en" | "ar" }; // Assert type explicitly
+  const { locale } = params;
 
   if (!routing.locales.includes(locale)) {
     notFound();
