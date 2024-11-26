@@ -15,3 +15,15 @@ export interface SanityProject {
   title: LocalizedString;
   description: LocalizedString;
 }
+
+
+// lib/interface.ts
+export interface Filter {
+  slug: {
+    current: string;
+  };
+}
+
+export interface SideMenuProps {
+  filters: Filter[];
+}

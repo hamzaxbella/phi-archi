@@ -1,24 +1,14 @@
-import { NextIntlClientProvider } from 'next-intl';
-// import { LocaleParams } from '@/lib/interface';
-import { setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-// interface Props {
-//   children: React.ReactNode;
-//   params: {
-//     locale: any;
-//   };
-// }
-
-export default async function LocaleLayout({
-  children,
-  params,
-}) {
-  const { locale }  = params;
-
+import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import Nav from "@/components/Nav";
+import "./globals.css";
+import Footer from "@/components/Footer";
+import { FilterProvider } from "@/context/FilterContext";
+export default async function RootLayout({ children, params }) {
+  const { locale } = await params;
+  const isRtl = locale === "ar";
   if (!routing.locales.includes(locale)) {
     notFound();
   }
@@ -28,10 +18,17 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body>
-        <header>
-          <LanguageSwitcher />
+        <header className="max-container">
+          <Nav locale={locale} isRtl={isRtl} />
         </header>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <main className="max-container">
+          <NextIntlClientProvider>
+            <FilterProvider>
+              {children}
+            </FilterProvider>
+          </NextIntlClientProvider>
+        </main>
+        <Footer />
       </body>
     </html>
   );

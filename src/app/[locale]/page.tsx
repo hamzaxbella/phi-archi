@@ -1,14 +1,12 @@
-import { Link } from '@/i18n/routing';
-import Tester from '@/components/Tester';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+import Navigator from "@/components/Navigator";
+import Link from "next/link";
 export default async function HomePage({ params }) {
-  const { locale } = await params; // No need to await, just access directly
+  const { locale } = await params; 
+  const isRtl = locale === "ar";
+
   return (
-    <div>
-      <h1>{locale}</h1>
-      <Link href="/Agency">Hello</Link>
-      <Tester locale={locale} />
+    <div className='margin-x h-[100vh] remaining-height'>
+      <Navigator locale={locale} isRtl = {isRtl}/>
     </div>
   );
 }
