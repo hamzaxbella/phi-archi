@@ -15,7 +15,7 @@ export async function getProjects() {
 export default async function ProjectsGrid () {
 
   const data = await getProjects()
-  
+  console.log(data)
   return (
     <div>
       <ProjectsGridTemplate />

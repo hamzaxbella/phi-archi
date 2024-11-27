@@ -1,5 +1,4 @@
 import Navigator from "@/components/Navigator";
-import Link from "next/link";
 export default async function HomePage({ params }) {
   const { locale } = await params; 
   const isRtl = locale === "ar";
