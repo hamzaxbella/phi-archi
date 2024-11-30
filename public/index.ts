@@ -6,6 +6,7 @@ import mediaCover from './mediaCover.jpg'
 import servicesCover from './servicesCover.jpg'
 import inverted from './inverted.svg'
 import back_arrow from './back_arrow.svg'
+import front_arrow from './Vector.svg'
 
 export {
     logo,
@@ -15,5 +16,6 @@ export {
     mediaCover,
     servicesCover,
     inverted,
-    back_arrow
+    back_arrow,
+    front_arrow
 }

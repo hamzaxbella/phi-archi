@@ -4,13 +4,13 @@ import { Navigators } from "@/app/[locale]/constants";
 const Navigator = ({ locale, isRtl }) => {
   return (
     <div
-      className={`grid h-full grid-cols-2 grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-6 py-3 `}
+      className={`grid h-full grid-cols-2 grid-rows-4 md:grid-cols-3 md:grid-rows-2 gap-3 md:gap-6 py-3 `}
     >
       {Navigators.map((nav , index) => (
         <Link
           key={index}
           href={`./${locale}${nav.path}`}
-          className="relative overflow-hidden rounded-xl w-full h-[1fr] bg-blue-300 first-of-type:col-span-2 lg:first-of-type:col-span-1 lg:first-of-type:row-span-2"
+          className="relative overflow-hidden rounded-xl w-full h-[1fr] bg-blue-300 first-of-type:col-span-2 first-of-type:row-span-2 md:first-of-type:col-span-1 md:first-of-type:row-span-2 "
         >
           <Image
             className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"

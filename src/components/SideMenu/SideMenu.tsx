@@ -3,7 +3,8 @@ import SideMenuTemplate from './SideMenuTemplate'
 export async function GetFilters() {
     const query = `
         * [_type == 'category'] {
-            slug,
+            "currentSlug" : slug.current,
+            title
         }
     `
 
@@ -17,10 +18,9 @@ export default async function SideMenu() {
     
     const filters = await GetFilters()
 
-    console.log(filters)
     
     return (
-        <div>
+        <div className="md:h-full">
             <SideMenuTemplate filters={filters} />
         </div>
     )

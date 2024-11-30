@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+::selection {
+  background-color: #181818; /* Background color (gold) */
+  color: #000000;            /* Text color (black) */
+}
+
+
+html {
+  scrollbar-color: #181818 #ffffff00;
+}
+
 @font-face {
   font-family: 'KoHo';
   src: url('/fonts/KoHo-Regular.ttf') format('truetype');
@@ -45,6 +60,8 @@
 }
 
 
+
+
 @layer components {
   .max-container {
     max-width: 1240px;
@@ -53,6 +70,18 @@
   .remaining-height {
     height: calc(100vh - 130px) !important;
   }
+  .min-remaining-height {
+    min-height: calc(100vh - 130px) !important;
+  }
+
+  .active-selector {
+    font-weight : bold !important;
+    position: relative;
+    transition: all;
+    transition-duration: 300;
+  }
+  
+
 
   #wrapper {
     position: relative;

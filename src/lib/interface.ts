@@ -19,9 +19,8 @@ export interface SanityProject {
 
 // lib/interface.ts
 export interface Filter {
-  slug: {
-    current: string;
-  };
+  currentSlug : string,
+  title : string
 }
 
 export interface SideMenuProps {

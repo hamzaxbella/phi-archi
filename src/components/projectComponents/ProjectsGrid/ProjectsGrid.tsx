@@ -6,19 +6,27 @@ export async function getProjects() {
   const query = `
     * [_type == "project"] {
       title, 
+      "currentSlug" : slug.current, 
+      description,
+      location,
+      client,
+      area,
+      budget,
+      "mainImage" : image.asset,
+      images,
+      "category" : category -> slug.current,
     }
   `
   const data = client.fetch(query)
   return data
 }
 
-export default async function ProjectsGrid () {
+export default async function ProjectsGrid ({locale}) {
 
   const data = await getProjects()
-  console.log(data)
   return (
     <div>
-      <ProjectsGridTemplate />
+      <ProjectsGridTemplate locale = {locale} data = {data} />
     </div>
   )
 }
