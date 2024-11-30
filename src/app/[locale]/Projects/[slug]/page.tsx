@@ -8,11 +8,9 @@ import ProjectGallery from "@/components/projectComponents/ProjectGallery";
 
 export default async function SingleProject({
   params,
-}: {
-  params: { slug: string; locale: string };
 }) {
   // Await params to ensure it is resolved
-  const { slug, locale } = params;
+  const { slug, locale } = params as { slug: string; locale: string };
 
   const project = await getProject(slug);
   if (!project) {
