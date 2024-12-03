@@ -7,3 +7,4 @@ export const Navigators = [
     {path : "/PressMedia" , title : [{fr : 'Médias et Presse'},{en : 'Media & Press'},{ar : 'مقالات'}, ], image : mediaCover},
     {path : "/Services" , title : [{fr : 'Services'},{en : 'Services'},{ar : 'خدماتنا'}, ], image : servicesCover},
 ]
+

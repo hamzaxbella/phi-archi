@@ -1,9 +1,14 @@
+import AboutDescription from '@/components/aboutComponents/AboutDescription'
+import NumiricTab from '@/components/aboutComponents/Numiric tab/NumiricTab'
 import React from 'react'
 
-const AboutUs = () => {
+export default async function AboutUs({params}) {
+  const {locale} = await params
+
   return (
-    <div>AboutUs</div>
+    <div className='lg:px-12 '>
+      <AboutDescription />
+      <NumiricTab locale={locale}/>
+    </div>
   )
 }
-
-export default AboutUs

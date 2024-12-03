@@ -31,7 +31,8 @@ const ProjectGallery = ({ project }) => {
     const groups = [];
     let i = 0;
 
-    while (i < images.length) { // Corrected loop condition
+    while (i < images.length) {
+      // Corrected loop condition
       const isOddRow = groups.length % 2 === 0; // Determines row type
       const groupSize = isOddRow ? 1 : 2; // Alternates between 1 and 2 images per row
       groups.push(images.slice(i, i + groupSize)); // Add group to groups

@@ -11,7 +11,7 @@ export default defineType ({
             type: "number",
         }),
         defineField({
-            name: "kelometre",
+            name: "kilometre",
             title : 'Kilomètre Conduits',
             type: 'number',
         }),

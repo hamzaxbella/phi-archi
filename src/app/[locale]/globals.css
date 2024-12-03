@@ -8,13 +8,20 @@
 }
 
 ::selection {
-  background-color: #181818; /* Background color (gold) */
-  color: #000000;            /* Text color (black) */
+  background-color: #333333; /* Background color (gold) */
+  color: white;            /* Text color (black) */
 }
 
 
 html {
   scrollbar-color: #181818 #ffffff00;
+}
+
+body {
+  background-image: url('../../../public/noise.svg');
+  background-size: 400px;
+  background-repeat: repeat;
+  
 }
 
 @font-face {

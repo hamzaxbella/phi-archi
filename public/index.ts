@@ -7,7 +7,6 @@ import servicesCover from './servicesCover.jpg'
 import inverted from './inverted.svg'
 import back_arrow from './back_arrow.svg'
 import front_arrow from './Vector.svg'
-
 export {
     logo,
     projectsCover,
@@ -17,5 +16,5 @@ export {
     servicesCover,
     inverted,
     back_arrow,
-    front_arrow
+    front_arrow,
 }
