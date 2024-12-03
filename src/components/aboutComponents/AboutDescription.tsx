@@ -9,7 +9,7 @@ interface Tab {
 
 const AboutDescription = () => {
 
-  const tabs = [
+  const tabs : Tab[] = [
     {
       title: "qui somme nous",
       description: `Fondée par Hatim EL Ouali & Lina EL Ouali, HLE est une agence, d'architecture,  d’urbanisme et de design d’intérieur, basée à Rabat et à Paris. Notre Atelier est d'abord une agence familiale, qui capitalise sur une expertise métier de plus de 30 ans à tarvers l'agence historique et réputée Atelier d'architecture EL OUALI & Hajji & ASSOCIES, co fondé Par Aziz EL Ouali en 1993. HLE allie donc le savoir-faire d'une agence de renom avec une vision contemporaine, intégrant des solutions novatrices et durables.
@@ -50,7 +50,7 @@ const AboutDescription = () => {
         transform: `translateX(${activeTab.offsetLeft}px)`,
       });
     }
-  }, [selectedTab]);
+  }, [selectedTab , tabs]);
 
   return (
     <div className="flex flex-col gap-6 md:flex-row rounded-3xl overflow-hidden bg-background md:bg-white">

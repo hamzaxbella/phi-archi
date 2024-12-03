@@ -1,6 +1,7 @@
 import React from 'react'
 
 const StatesTemplate = ({data , locale}) => {
+  console.log(data , locale)
   return (
     <div className="bg-white p-6  rounded-3xl grid grid-cols-2 grid-rows-2 lg:grid-cols-4 lg:grid-rows-1 justify-center items-center my-6 space-y-4 space-y-0">
       {/* First Stat */}
