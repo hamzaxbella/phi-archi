@@ -26,3 +26,9 @@ export interface Filter {
 export interface SideMenuProps {
   filters: Filter[];
 }
+
+export type Testimonial = {
+  person : string,
+  testimonial : string,
+}
+

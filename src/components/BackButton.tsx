@@ -6,7 +6,6 @@ interface BackButtonProps {
 }
 
 const BackButton = ({ path }: BackButtonProps) => {
-  console.log("Path is " + `${path}`)
   return (
     <Link
       href={path} // Ensure this is a valid string

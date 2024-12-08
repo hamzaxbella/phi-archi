@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import PageTitle from "../PageTitle";
 
 interface Tab {
@@ -9,16 +9,16 @@ interface Tab {
 
 const AboutDescription = () => {
 
-  const tabs : Tab[] = [
+  const tabs = useMemo<Tab[]>(() => [
     {
       title: "qui somme nous",
-      description: `Fondée par Hatim EL Ouali & Lina EL Ouali, HLE est une agence, d'architecture,  d’urbanisme et de design d’intérieur, basée à Rabat et à Paris. Notre Atelier est d'abord une agence familiale, qui capitalise sur une expertise métier de plus de 30 ans à tarvers l'agence historique et réputée Atelier d'architecture EL OUALI & Hajji & ASSOCIES, co fondé Par Aziz EL Ouali en 1993. HLE allie donc le savoir-faire d'une agence de renom avec une vision contemporaine, intégrant des solutions novatrices et durables.
-      Au delà de la dimension familiale, de l'heritage technique et architecturale, HLE se veut etre le fruit du developpement, et de la pluridisciplinarité donnant lieu à l'acte de bâtir. Son engagement pour la valorisation de l’architecture se concrétise à chaque étape de la chaine de valeur par une œuvre collective et un travail d'équipe constant. HLE est fondée sur les savoirs partagés et le dialogue pour augmenter le potentiel créatif d’une conception collective. Notre agence, s'est donc construite autour de projets d'une grande diversité, et de différentes échelles, avec une forte volonté:
+      description: `Fondée par Hatim EL Ouali & Lina EL Ouali, HLE est une agence, d'architecture,  d'urbanisme et de design d'intérieur, basée à Rabat et à Paris. Notre Atelier est d'abord une agence familiale, qui capitalise sur une expertise métier de plus de 30 ans à tarvers l'agence historique et réputée Atelier d'architecture EL OUALI & Hajji & ASSOCIES, co fondé Par Aziz EL Ouali en 1993. HLE allie donc le savoir-faire d'une agence de renom avec une vision contemporaine, intégrant des solutions novatrices et durables.
+      Au delà de la dimension familiale, de l'heritage technique et architecturale, HLE se veut etre le fruit du developpement, et de la pluridisciplinarité donnant lieu à l'acte de bâtir. Son engagement pour la valorisation de l'architecture se concrétise à chaque étape de la chaine de valeur par une œuvre collective et un travail d'équipe constant. HLE est fondée sur les savoirs partagés et le dialogue pour augmenter le potentiel créatif d'une conception collective. Notre agence, s'est donc construite autour de projets d'une grande diversité, et de différentes échelles, avec une forte volonté:
       - d'Influencer positivement et durablement le contexte social et environnemental du projet
-      - S’engager contre la banalité par des solutions architecturales innovantes
+      - S'engager contre la banalité par des solutions architecturales innovantes
       - Concrétiser chaque projet par un engagement professionnel constant.
       Dans ce sens, chez HLE, la composition multiculturelle et pluridisciplinaire permet un échange pertinent entre les cultures, les méthodes et les contextes. Cette approche favorise une compréhension plurielle du monde. C'est ainsi que témoignent les réalisations menées par HLE pour répondre aux grands enjeux du 21e siècle.
-      Cet engagement donne aux architectures traitées par HLE une profondeur qui marque la volonté d’inscrire de manière durable des éléments dans le tissu territorial. Au-delà de sa valeur d’usage, de sa puissance esthétique et de la nécessité de construire avec responsabilité, l’architecture est pour l’agence une exploration de l’intangible et de l’immatériel.`,
+      Cet engagement donne aux architectures traitées par HLE une profondeur qui marque la volonté d'inscrire de manière durable des éléments dans le tissu territorial. Au-delà de sa valeur d'usage, de sa puissance esthétique et de la nécessité de construire avec responsabilité, l'architecture est pour l'agence une exploration de l'intangible et de l'immatériel.`,
     },
     {
       title: "L'expertise",
@@ -26,11 +26,11 @@ const AboutDescription = () => {
       Nous collaborons étroitement avec nos clients pour traduire leurs aspirations en espaces uniques, adaptés à leur usage et à leur environnement, tout en respectant les normes les plus exigeantes de l'industrie.`,
     },
     {
-      title: "la collaboration",
+      title: "la collaboration", 
       description: `La collaboration est au cœur de la philosophie de HLE Architecture. Nous croyons que les meilleurs projets naissent d'un dialogue constant entre nos équipes et nos clients. En intégrant leurs idées et en partageant notre expertise, nous développons des solutions architecturales qui répondent parfaitement à leurs attentes.
-      Chaque étape du projet est une occasion d’échanger et de co-créer, assurant ainsi une vision commune tout en respectant les objectifs et les contraintes de nos clients.`,
+      Chaque étape du projet est une occasion d'échanger et de co-créer, assurant ainsi une vision commune tout en respectant les objectifs et les contraintes de nos clients.`,
     },
-  ];
+  ], []);
   
 
   const [selectedTab, setSelectedTab] = useState<string>("qui somme nous");
@@ -50,7 +50,7 @@ const AboutDescription = () => {
         transform: `translateX(${activeTab.offsetLeft}px)`,
       });
     }
-  }, [selectedTab , tabs]);
+  }, [selectedTab, tabs]);
 
   return (
     <div className="flex flex-col gap-6 md:flex-row rounded-3xl overflow-hidden bg-background md:bg-white">

@@ -1,6 +1,5 @@
 
 const ProjectDetails = ({project , locale}) => {
-  console.log(project)
   return (
     <div>
       <ul >

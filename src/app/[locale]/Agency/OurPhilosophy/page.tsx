@@ -1,7 +1,11 @@
+import Philosophy from "@/components/aboutComponents/Philosophy"
 
-const OurPhilosophy = () => {
+const OurPhilosophy = ({params}) => {
+  const {locale} = params
   return (
-    <div>OurPhilosophy</div>
+    <div>
+      <Philosophy locale={locale} />
+    </div>
   )
 }
 
