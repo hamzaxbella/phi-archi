@@ -30,7 +30,7 @@ module.exports = {
       },
 
       textColor: {
-        white: "#181818",
+        white: "#FFFFFF",
       },
       colors: {
         background: "#EAEAEA",

@@ -10,21 +10,31 @@ import "photoswipe/style.css";
 import { ctr_left } from "../../../../public";
 import { ctr_right } from "../../../../public";
 
-const PhotoGalleryTemplate = ({ images }) => {
+interface ImageAsset {
+  _ref: string;
+  asset: {
+    _ref: string;
+  };
+  alt?: string;
+}
+
+interface PhotoGalleryTemplateProps {
+  images: ImageAsset[];
+}
+
+const PhotoGalleryTemplate = ({ images }: PhotoGalleryTemplateProps) => {
   const galleryRef = useRef<HTMLDivElement | null>(null);
   const SwiperRef = useRef<SwiperClass | null>(null);
   const [isGrabbing, setIsGrabbing] = useState<boolean>(false);
-  const [currentSlide, setCurrentSlide] = useState<number>(0); // State for current slide index
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-  const handleMouseDown = () => setIsGrabbing(true);
-  const handleMouseUp = () => setIsGrabbing(false);
+  const handleMouseDown = (): void => setIsGrabbing(true);
+  const handleMouseUp = (): void => setIsGrabbing(false);
 
-  const handleImageClick = (event) => {
-    event.preventDefault(); // Prevent the default anchor behavior
-    // Open the lightbox here if needed, but it's already handled in the useEffect
+  const handleImageClick = (event: React.MouseEvent): void => {
+    event.preventDefault();
   };
 
-  // Configure and initialize PhotoSwipe Lightbox
   useEffect(() => {
     if (!galleryRef.current) return;
 
@@ -49,8 +59,8 @@ const PhotoGalleryTemplate = ({ images }) => {
       <div ref={galleryRef} className="relative my-6 mx-12 ">
         <Swiper
           className={`rounded-3xl overflow-hidden transition-all duration-200 ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
-          onSwiper={(swiper) => (SwiperRef.current = swiper)} // Swiper instance
-          onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)} // Update the current slide
+          onSwiper={(swiper) => (SwiperRef.current = swiper)}
+          onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
           onTouchStart={handleMouseDown}
           onTouchEnd={handleMouseUp}
           breakpoints={{
@@ -99,7 +109,7 @@ const PhotoGalleryTemplate = ({ images }) => {
           height={50}
           alt="control-left"
           onClick={() => {
-            SwiperRef.current?.slidePrev(); // Move to the previous slide
+            SwiperRef.current?.slidePrev();
           }}
         />
         <Image
@@ -109,7 +119,7 @@ const PhotoGalleryTemplate = ({ images }) => {
           height={50}
           alt="control-right"
           onClick={() => {
-            SwiperRef.current?.slideNext(); // Move to the next slide
+            SwiperRef.current?.slideNext();
           }}
         />
       </div>
@@ -117,8 +127,8 @@ const PhotoGalleryTemplate = ({ images }) => {
         {Array.from({ length: images.length }).map((_, i) => (
           <div key={i} className="flex justify-between items-center">
             <div className="w-[1px] h-[15px] -rotate-12 bg-dark opacity-85" />
-            <div className={`relative py-2 cursor-pointer `} >
-              <div className={`${currentSlide === i && '!font-bold opacity-100'} absolute left-1/2 -translate-x-1/2 font-extralight text-sm  opacity-60`}>{i}</div>
+            <div className={`relative py-2 cursor-pointer`}>
+              <div className={`${currentSlide === i && '!font-bold opacity-100'} absolute left-1/2 -translate-x-1/2 font-extralight text-sm opacity-60`}>{i}</div>
               <div className={`transition-all duration-300 w-[40px] h-[1px] bg-dark opacity-85`} />
             </div>
           </div>

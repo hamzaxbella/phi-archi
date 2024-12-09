@@ -6,7 +6,7 @@ import Wrapper from "@/components/Wrapper";
 
 export default async function SingleProject({ params }) {
   // Await params to ensure it is resolved
-  const { slug, locale } = params as { slug: string; locale: string };
+  const { slug, locale } = await params as { slug: string; locale: string };
 
   const project = await getProject(slug);
   if (!project) {
@@ -17,7 +17,7 @@ export default async function SingleProject({ params }) {
     <Wrapper
       path={"./Projects"}
       locale={locale}
-      PageTitle={<PageTitle label={project.title?.[locale]} />}
+      PageTitle={<PageTitle label={{en: project.title?.en, fr: project.title?.fr, ar: project.title?.ar}} locale={locale} />}
       side={<ProjectDetails project={project} locale={locale} />}
       main={<ProjectGallery project={project} />}
     />

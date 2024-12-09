@@ -9,7 +9,7 @@ export default async function AboutUs({params}) {
 
   return (
     <div className='lg:px-12 '>
-      <AboutDescription />
+      <AboutDescription locale={locale} />
       <NumiricTab locale={locale}/>
       <Testimonials locale={locale} />
       <PhotoGallery />

@@ -15,8 +15,8 @@ export default async function layout  ({ params , children }) {
     <Wrapper
       locale={locale}
       path={"/"}
-      PageTitle={<PageTitle label="Agency" />}
-      side={<SideNav links={links} locale = {locale} />}
+      PageTitle={<PageTitle label={{ en: "Agency", fr: "Agence", ar: "وكالة" }} locale={locale} />}
+      side={<SideNav links={links} locale={locale} />}
       main={children}
     />
   );

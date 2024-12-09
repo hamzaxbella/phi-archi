@@ -11,6 +11,10 @@ import quote_left from './quote_left.svg'
 import quote_right from './quote_right.svg'
 import ctr_right from './ctr_right.svg'
 import ctr_left from './ctr_left.svg'
+import ecouter from './ecouter.jpg'
+import edifier from './edifier.jpg'
+import innover from './ennover.jpg'
+
 
 export {
     logo,
@@ -25,5 +29,8 @@ export {
     quote_left,
     quote_right,
     ctr_left,
-    ctr_right
+    ctr_right,
+    ecouter,
+    edifier,
+    innover
 }

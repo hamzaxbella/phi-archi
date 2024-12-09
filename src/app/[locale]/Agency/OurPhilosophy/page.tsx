@@ -1,11 +1,11 @@
 import Philosophy from "@/components/aboutComponents/Philosophy"
 
-const OurPhilosophy = ({params}) => {
-  const {locale} = params
+const OurPhilosophy = async ({params}) => {
+  const {locale} = await params
   return (
-    <div>
+    <section className=" w-full h-full  felx  justify-center items-center">
       <Philosophy locale={locale} />
-    </div>
+    </section>
   )
 }
 

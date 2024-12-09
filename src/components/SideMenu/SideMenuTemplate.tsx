@@ -1,16 +1,34 @@
 "use client";
 
-import { SideMenuProps } from "@/lib/interface";
 import { useFilter } from "@/context/FilterContext";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { front_arrow } from "../../../public";
 
-const SideMenuTemplate = ({ filters }: SideMenuProps) => {
+interface Filter {
+  currentSlug: string;
+  title: string;
+}
+
+interface SideMenuTemplateProps {
+  locale: string;
+  filters: Filter[];
+}
+
+const SideMenuTemplate: React.FC<SideMenuTemplateProps> = ({ locale, filters }) => {
   const { selectedFilter, setSelectedFilter } = useFilter();
   const [isScrollableLeft, setIsScrollableLeft] = useState(false);
   const [isScrollableRight, setIsScrollableRight] = useState(true);
   const scrollContainerRef = useRef<HTMLUListElement>(null);
+  const isRtl = locale === 'ar';
+
+  const labels = {
+    all: {
+      en: "all",
+      fr: "tout",
+      ar: "الكل"
+    }
+  };
 
   useEffect(() => {
     if (!selectedFilter) {
@@ -40,13 +58,13 @@ const SideMenuTemplate = ({ filters }: SideMenuProps) => {
   });
 
   return (
-    <div className="w-full h-[90%] relative">
+    <div className="w-full h-[90%] relative" dir={isRtl ? 'rtl' : 'ltr'}>
       {/* Fading effect for left and right */}
       {isScrollableLeft && (
-        <div className="absolute left-0 top-0 bottom-0 w-10 h-full  bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none md:hidden z-10"></div>
+        <div className={`absolute ${isRtl ? 'right-0' : 'left-0'} top-0 bottom-0 w-10 h-full bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none md:hidden z-10`}></div>
       )}
       {isScrollableRight && (
-        <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white via-white/50 to-transparent pointer-events-none md:hidden z-10"></div>
+        <div className={`absolute ${isRtl ? 'left-0' : 'right-0'} top-0 bottom-0 w-10 bg-gradient-to-l from-white via-white/50 to-transparent pointer-events-none md:hidden z-10`}></div>
       )}
 
       <ul
@@ -58,13 +76,25 @@ const SideMenuTemplate = ({ filters }: SideMenuProps) => {
           className={`group flex items-center gap-2 relative cursor-pointer capitalize font-light text-md ${
             selectedFilter === "all" && "active-selector"
           } relative w-fit`}
-        onClick={() => setSelectedFilter("all")}
+          onClick={() => setSelectedFilter("all")}
         >
           {selectedFilter === "all" && (
             <span className="md:hidden absolute w-1 h-1 bg-dark rounded-full left-1/2 -translate-x-1/2 -bottom-[10px]" />
           )}
-            <Image src={front_arrow} className={`hidden md:block opacity-0 md:absolute md:left-3 ${selectedFilter === "all" && '!left-0 md:opacity-100'} md:group-hover:-left-0 md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-500 md:ease-in-out  `} alt="arrow"  width={30} height={30}/>
-            <p className={` md:group-hover:ml-10 md:group-hover:font-semibold ${selectedFilter === "all" && 'md:ml-10 md:font-semibold'} md:transition-all md:duration-500 md:ease-in-out `}>all</p>
+          <Image 
+            src={front_arrow} 
+            className={`hidden md:block opacity-0 md:absolute ${isRtl ? 'md:right-3 rotate-180' : 'md:left-3'} ${
+              selectedFilter === "all" && (isRtl ? '!right-0' : '!left-0') + ' md:opacity-100'
+            } ${isRtl ? 'md:group-hover:right-0' : 'md:group-hover:left-0'} md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-500 md:ease-in-out`} 
+            alt="arrow"  
+            width={30} 
+            height={30}
+          />
+          <p className={`${isRtl ? 'md:group-hover:mr-10' : 'md:group-hover:ml-10'} md:group-hover:font-semibold ${
+            selectedFilter === "all" && (isRtl ? 'md:mr-10' : 'md:ml-10') + ' md:font-semibold'
+          } md:transition-all md:duration-500 md:ease-in-out`}>
+            {labels.all[locale]}
+          </p>
         </li>
 
         {filters.map((filter, index) => (
@@ -78,9 +108,20 @@ const SideMenuTemplate = ({ filters }: SideMenuProps) => {
             {selectedFilter === filter.currentSlug && (
               <span className="md:hidden absolute w-1 h-1 bg-dark rounded-full left-1/2 -translate-x-1/2 -bottom-[10px]" />
             )}
-            <Image src={front_arrow} className={`hidden md:block opacity-0 md:absolute md:left-3 ${selectedFilter === filter.currentSlug && '!left-0 md:opacity-100'} md:group-hover:-left-0 md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-500 md:ease-in-out  `} alt="arrow"  width={30} height={30}/>
-            <p className={` md:group-hover:ml-10 md:group-hover:font-semibold ${selectedFilter === filter.currentSlug && 'md:ml-10 md:font-semibold'} md:transition-all md:duration-500 md:ease-in-out `}>{filter.title}</p>
-            
+            <Image 
+              src={front_arrow} 
+              className={`hidden md:block opacity-0 md:absolute ${isRtl ? 'md:right-3 rotate-180' : 'md:left-3'} ${
+                selectedFilter === filter.currentSlug && (isRtl ? '!right-0' : '!left-0') + ' md:opacity-100'
+              } ${isRtl ? 'md:group-hover:right-0' : 'md:group-hover:left-0'} md:opacity-0 md:group-hover:opacity-100 md:transition-all md:duration-500 md:ease-in-out`} 
+              alt="arrow"  
+              width={30} 
+              height={30}
+            />
+            <p className={`${isRtl ? 'md:group-hover:mr-10' : 'md:group-hover:ml-10'} md:group-hover:font-semibold ${
+              selectedFilter === filter.currentSlug && (isRtl ? 'md:mr-10' : 'md:ml-10') + ' md:font-semibold'
+            } md:transition-all md:duration-500 md:ease-in-out`}>
+              {filter.title}
+            </p>
           </li>
         ))}
       </ul>

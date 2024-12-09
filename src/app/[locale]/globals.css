@@ -87,6 +87,21 @@ body {
     transition: all;
     transition-duration: 300;
   }
+
+  .text-clip {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  
+  .text-holder {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    overflow: hidden;
+  }
+
+  .slide-nav {  
+    height: calc(100% - 250px);
+  }
+
   
 
 

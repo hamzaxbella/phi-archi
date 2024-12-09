@@ -46,7 +46,7 @@ const TestimonialsTemplate = ({ locale, testimonials }: TestimonialsProps) => {
       >
         {testimonials.map((testimo , idx) => (
           <SwiperSlide className="relative mt-5 " key={idx}>
-            <div  className=" bg-white px-8 py-4 rounded-3xl">
+            <div  className="bg-background lg:bg-white px-8 py-4 rounded-3xl">
               <p dir={`${isRtl && 'rtl'}`} className={`${'text-justify'}`}><span className="text-dark font-bold">{`"`}</span>{testimo.testimonial?.[locale]}<span className="text-dark font-bold">{`"`}</span></p>
               <h3 dir={`${isRtl && 'rtl'}`}  className="font-bold mt-4 text-sm">{testimo.person?.[locale] || "Unknown Author"}</h3>
             </div>

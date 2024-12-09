@@ -1,5 +1,10 @@
 import { client } from "@/lib/sanity"
 import SideMenuTemplate from './SideMenuTemplate'
+
+interface SideMenuProps {
+  locale: string;
+}
+
 export async function GetFilters() {
     const query = `
         * [_type == 'category'] {
@@ -13,7 +18,7 @@ export async function GetFilters() {
     return data
 }
 
-export default async function SideMenu() {
+export default async function SideMenu({ locale }: SideMenuProps) {
     
     
     const filters = await GetFilters()
@@ -21,7 +26,7 @@ export default async function SideMenu() {
     
     return (
         <div className="md:h-full">
-            <SideMenuTemplate filters={filters} />
+            <SideMenuTemplate locale={locale} filters={filters} />
         </div>
     )
 }

@@ -3,9 +3,13 @@ import Link from "next/link"
 import { back_arrow } from "../../public"
 interface BackButtonProps {
   path: string;
+  locale: string;
 }
 
-const BackButton = ({ path }: BackButtonProps) => {
+const BackButton: React.FC<BackButtonProps> = ({ path, locale }) => {
+  const isRtl = locale === 'ar';
+  const backText = isRtl ? 'رجوع' : 'Back';
+
   return (
     <Link
       href={path} // Ensure this is a valid string
@@ -18,7 +22,7 @@ const BackButton = ({ path }: BackButtonProps) => {
         height={50}
         alt="back button"
       />
-      <p className="hidden md:block text-2xl -translate-x-4">Back</p>
+      <p className="hidden md:block text-2xl -translate-x-4">{backText}</p>
     </Link>
   );
 };

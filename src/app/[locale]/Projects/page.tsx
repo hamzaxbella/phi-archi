@@ -10,8 +10,8 @@ export default async function Projects({ params }) {
     <Wrapper
       path={"/"}
       locale={locale}
-      PageTitle={<PageTitle label="projects" />}
-      side={<SideMenu />}
+      PageTitle={<PageTitle label={{en: "projects", fr: "projets", ar: "المشاريع"}} locale={locale} />}
+      side={<SideMenu locale={locale} />}
       main={<ProjectsGrid locale={locale} />}
     />
   );
