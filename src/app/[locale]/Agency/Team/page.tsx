@@ -1,7 +1,29 @@
+import TeamListTemplate from "@/components/aboutComponents/TeamList";
+import { client } from "@/lib/sanity"
 
-const Team = () => {
+
+async function getTeam() {
+  const query = `
+    *[_type == "team"] {
+      team_member,
+      name,
+      slug,
+      description,
+      occupation,
+      image,
+    }
+  `
+  const data = await client.fetch(query)
+  return data
+}
+
+
+const Team = async ({params}) => {
+  const {locale} = params
+  const data = await getTeam()
+  console.log(data)
   return (
-    <div>Team</div>
+    <TeamListTemplate locale={locale} team={data} />
   )
 }
 

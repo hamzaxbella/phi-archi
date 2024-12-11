@@ -6,9 +6,10 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const Navigator = ({ locale, isRtl }) => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!containerRef.current) return;
     const links = containerRef.current.querySelectorAll('a');
     
     gsap.fromTo(links, {

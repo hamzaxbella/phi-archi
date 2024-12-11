@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/vision": "^3.64.2",
+    "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "lightgallery": "^2.8.1",
@@ -21,6 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-grid-layout": "^1.5.0",
+    "react-markdown": "^9.0.1",
     "styled-components": "^6.1.13",
     "swiper": "^11.1.15",
     "tailwindcss": "^3.4.15",
