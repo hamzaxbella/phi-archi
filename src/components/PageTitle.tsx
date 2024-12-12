@@ -11,8 +11,8 @@ const PageTitle = ({ label, locale }: PageTitleProps) => {
   const isRtl = locale === 'ar';
 
   return (
-    <div className={`flex justify-between items-center gap-6 ${isRtl ? 'flex-row-reverse' : ''}`}>
-      <h1 className="font-koho font-semibold text-2xl md:text-4xl md:font-bold uppercase" dir={isRtl ? 'rtl' : 'ltr'}>
+      <div className={`flex justify-between items-center gap-6 `}>
+        <h1 className={`${locale === 'ar' ? 'font-cairo' : 'font-koho'} font-semibold text-2xl md:text-4xl md:font-bold uppercase`} dir={isRtl ? 'rtl' : 'ltr'}>
         {label[locale]}.
       </h1>      
       <div className="relative w-full h-full md:hidden">

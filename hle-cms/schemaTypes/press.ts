@@ -9,7 +9,20 @@ export default defineType({
       name: 'stitle',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
+
     }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options : {
+        source: 'stitle',
+        maxLength: 96,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+
     defineField({
       name: 'title',
       title: 'Title',
@@ -19,16 +32,19 @@ export default defineType({
           name: 'en',
           title: 'English',
           type: 'string',
+          validation: (Rule) => Rule.required(),
         }),
         defineField({
           name: 'fr',
           title: 'French',
           type: 'string',
+          validation: (Rule) => Rule.required(),
         }),
         defineField({
           name: 'ar',
           title: 'Arabic',
           type: 'string',
+          validation: (Rule) => Rule.required(),
         }),
       ],
     }),
@@ -41,16 +57,44 @@ export default defineType({
             name: 'en',
             title: 'English',
             type: 'text',
+            validation: (Rule) => Rule.required(),
           }),
           defineField({
             name: 'fr',
             title: 'French',
             type: 'text',
+            validation: (Rule) => Rule.required(),
           }),
           defineField({
             name: 'ar',
             title: 'Arabic',
             type: 'text',
+            validation: (Rule) => Rule.required(),
+          }),
+        ],
+      }),
+    defineField({
+        name: 'content',
+        title: 'Content',
+        type: 'object',
+        fields: [
+          defineField({
+            name: 'en',
+            title: 'English',
+            type: 'text',
+            validation: (Rule) => Rule.required(),
+          }),
+          defineField({
+            name: 'fr',
+            title: 'French',
+            type: 'text',
+            validation: (Rule) => Rule.required(),
+          }),
+          defineField({
+            name: 'ar',
+            title: 'Arabic',
+            type: 'text',
+            validation: (Rule) => Rule.required(),
           }),
         ],
       }),
@@ -60,7 +104,8 @@ export default defineType({
         type: 'image',
         options : {
             hotspot : true
-        }
+        },
+        validation: (Rule) => Rule.required(),
       })
   
   ],

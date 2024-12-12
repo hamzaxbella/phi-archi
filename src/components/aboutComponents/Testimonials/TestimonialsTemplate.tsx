@@ -22,7 +22,7 @@ const TestimonialsTemplate = ({ locale, testimonials }: TestimonialsProps) => {
   const handleMouseUp = () => setIsGrabbing(false); // On mouse up, reset grabbing
   return (
     <div className="my-12">
-      <h1 className="my-6 text-2xl text-dark font-semibold">Ce qu&apos;ils disent de nous</h1>
+      <h1 dir={isRtl ? 'rtl' : 'ltr'} className="my-6 text-2xl text-dark font-semibold">{locale === 'ar' ? 'ماذا يقولون عنا :' : 'Ce qu\'ils disent de nous'}</h1>
       <Swiper
         className={` transition-all duration-200 ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}
         onSwiper={(swiper) => (swiperRef.current = swiper)} // Swiper instance

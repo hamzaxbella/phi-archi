@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       fontFamily: {
         koho: ['"KoHo"', 'Inter'], // Add the KoHo font
+        cairo: ['Cairo', 'sans-serif'], // Add Cairo font
       },
       fontWeight: {
         light: "300",
@@ -46,4 +47,3 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/typography')],
 }
-

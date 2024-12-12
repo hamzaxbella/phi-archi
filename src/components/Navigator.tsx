@@ -43,7 +43,7 @@ const Navigator = ({ locale, isRtl }) => {
             height={1000}
           />
           <h1
-            className={`absolute top-4 ${isRtl ? "right-4" : "left-4"} text-xl font-semibold text-blue-50 z-[2]`}
+            className={`absolute top-4 ${isRtl ? "right-4 font-cairo" : "left-4 font-koho"} text-2xl font-semibold text-blue-50 z-[2]`}
           >
             {nav.title.find((t) => t[locale])?.[locale] || "Default Title"}
           </h1>

@@ -1,33 +1,35 @@
 'use client'
-import TeamMember from "./TeamMember"
-import { useEffect, useRef } from "react"
-import gsap from "gsap"
+import TeamMember from "./TeamMember";
+import { useEffect } from "react";
+import gsap from "gsap";
 
-const TeamListTemplate = ({locale , team}) => {
-  const teamRef = useRef(null)
-
+const TeamListTemplate = ({ locale, team }) => {
   useEffect(() => {
-    if (!teamRef.current) return;
-    const teamMembers = teamRef.current
-    
-    gsap.to(teamMembers, 
-      {
-        opacity: 1,
+    const ctx = gsap.context(() => {
+      gsap.to(".team-member", {
         y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out"
-      },
-    )
-  }, [])
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out"
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div ref={teamRef} className="w-full h-full grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-4">
-        {team.map((item  , idx) => (
-            <TeamMember key={idx} item={item} locale={locale} />
-        ))}
+    <div className="w-full h-full grid grid-cols-2 lg:grid-cols-3 my-8 lg:grid-rows-3 gap-4">
+      {team.map((item, idx) => (
+        <div 
+          key={idx} 
+          className="team-member translate-y-[25px] opacity-0"
+        >
+          <TeamMember item={item} locale={locale} />
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TeamListTemplate
+export default TeamListTemplate;

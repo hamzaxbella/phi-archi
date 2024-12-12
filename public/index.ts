@@ -14,7 +14,7 @@ import ctr_left from './ctr_left.svg'
 import ecouter from './ecouter.jpg'
 import edifier from './edifier.jpg'
 import innover from './ennover.jpg'
-
+import medal from './medal 1.svg'
 
 export {
     logo,
@@ -32,5 +32,6 @@ export {
     ctr_right,
     ecouter,
     edifier,
-    innover
+    innover,
+    medal
 }

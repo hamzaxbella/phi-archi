@@ -25,7 +25,7 @@ const ProjectDetails = ({project, locale}) => {
   };
 
   return (
-    <div dir={isRtl ? 'rtl' : 'ltr'}>
+    <div dir={isRtl ? 'rtl' : 'ltr'} className={`${isRtl ? 'font-cairo' : ''}`}>
       <ul>
         <li className="py-2 border-dark border-solid border-b-[.5px] border-opacity-50">
           {labels.location[locale]} : {project.location?.[locale] || "?? "}

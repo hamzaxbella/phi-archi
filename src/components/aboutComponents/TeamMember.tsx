@@ -6,7 +6,7 @@ const TeamMember = ({ item, locale }) => {
   const href = `/${locale}/Agency/Team/${item.slug.current}`;
   
   return (
-    <div className="translate-y-[25px] opacity-0 text-center flex flex-col items-center justify-center gap-2">
+    <div className="text-center flex flex-col items-center justify-center gap-2">
       <Link href={href} className="ring-1 ring-dark  ring-opacity-25 rounded-full h-[120px] w-[120px] overflow-hidden">
         <Image
           className="w-full h-full object-cover hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer"

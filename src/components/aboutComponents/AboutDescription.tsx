@@ -123,7 +123,7 @@ const AboutDescription: React.FC<AboutDescriptionProps> = ({ locale }) => {
           controls
         ></video>
       </div>
-      <div className={`self-center md:flex-1 spy-4 px-2 ${isRtl ? 'md:order-1' : ''}`}>
+      <div className={`lg:my-10 md:flex-1 spy-4 px-2 ${isRtl ? 'md:order-1' : ''}`}>
         <PageTitle label={{en: "HLE-architecture", fr: "HLE-architecture", ar: "HLE-architecture"}} locale={locale} />
         <div>
           <ul

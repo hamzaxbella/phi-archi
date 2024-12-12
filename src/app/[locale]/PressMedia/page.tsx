@@ -1,7 +1,9 @@
+import PressList from "@/components/PressComponents/Press/PressList"
 
-const Press = () => {
+const Press = async ({params}) => {
+  const {locale} = await params
   return (
-    <div>Press</div>
+    <PressList locale={locale} />
   )
 }
 

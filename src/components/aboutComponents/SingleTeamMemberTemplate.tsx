@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown"
 const SingleTeamMemberTemplate = ({ data, isRtl, locale }) => {
   
       return (
-        <div className={`w-full h-full flex flex-col items-center ${isRtl ? 'rtl' : 'ltr'}`}>
+        <div className={` w-full h-full flex flex-col items-center ${isRtl ? 'rtl' : 'ltr'}`}>
           <div>
               <div className={`flex items-center gap-8 flex-row justify-start`}>
                   <div className="w-[150px] h-[150px] rounded-full overflow-hidden">
@@ -24,7 +24,7 @@ const SingleTeamMemberTemplate = ({ data, isRtl, locale }) => {
                   </div>
               </div>
               <div className="mx-auto my-8 w-full h-[1px] bg-dark" />
-              <div className={`prose prose-sm max-w-none ${isRtl ? 'text-right' : 'text-left'}`}>
+              <div className={`my-8 prose prose-sm max-w-none ${isRtl ? 'text-right' : 'text-left'}`}>
                 <ReactMarkdown>{data[0].description[locale]}</ReactMarkdown>
               </div>
           </div>

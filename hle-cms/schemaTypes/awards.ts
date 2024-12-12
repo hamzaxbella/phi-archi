@@ -5,9 +5,10 @@ export default defineType({
     title: "Awards",
     type: "document",
     fields : [
+
         defineField({
-            name : 'stitle',
-            title: 'Document title',
+            name : 'date',
+            title: 'Date',
             type: 'string',
         }),
         defineField({
