@@ -9,7 +9,7 @@ const SinglePress = async ({params}) => {
   return (
     <div>
       {press.map((pressItem) => (
-        <div key={pressItem.slug.current} className="max-w-6xl mx-auto px-4 py-8">
+        <div key={pressItem.slug.current} className="max-w-6xl mx-auto md:px-4 py-8">
           <div className="mb-8 relative w-full h-[250px] md:h-[300px] overflow-hidden rounded-2xl shadow-md">
             <Image src={urlFor(pressItem.image).url()} alt={pressItem.title[locale]} className="w-full h-full object-cover" width={1000} height={1000} />
           </div>

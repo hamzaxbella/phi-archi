@@ -15,7 +15,10 @@ import ecouter from './ecouter.jpg'
 import edifier from './edifier.jpg'
 import innover from './ennover.jpg'
 import medal from './medal 1.svg'
-
+import logo_bg from './logo-bg.svg'
+import vectorL from './vector-L.svg'
+import vectorH from './vector-H.svg'
+import Avatar from './avatar.jpg'
 export {
     logo,
     projectsCover,
@@ -33,5 +36,9 @@ export {
     ecouter,
     edifier,
     innover,
-    medal
+    medal,
+    logo_bg,
+    vectorL,
+    vectorH,
+    Avatar
 }

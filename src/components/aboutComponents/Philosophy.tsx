@@ -163,15 +163,15 @@ const Philosophy: React.FC<PhilosophyProps> = ({ locale }) => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full flex flex-col gap-12 justify-center items-center"
+      className="relative  overflow-hidden md:px-8 w-full h-full flex flex-col gap-12 justify-center items-center"
       dir={isRtl ? 'rtl' : 'ltr'}
     >
-      <div className="flex lg:flex-row flex-col justify-center items-center">
+      <div className="flex lg:flex-row flex-col  justify-center items-center h-full">
         {/* Image container */}
-        <div className="first-child flex-1 overlay-clip flex justify-center items-center text-white text-2xl">
+        <div className="first-child flex-1 h-[95%] md:max-h-[1000px] max-h-[300px] overlay-clip flex justify-center items-center text-white text-2xl">
           <Image
             src={currentPhiloSlide.image}
-            className="max-h-[300px] lg:max-h-[600px] object-cover"
+            className="h-full w-full object-cover"
             alt={`Philosophy - ${slideTitle}`}
             width={1000}
             height={1000}
@@ -179,7 +179,7 @@ const Philosophy: React.FC<PhilosophyProps> = ({ locale }) => {
           />
         </div>
         {/* Text content container */}
-        <div className={`relative second-child flex-1 flex-col lg:overflow-y-auto pt-5 lg:pt-12 bg-dark h-[90%] px-6 overlay-clip flex text-xl -translate-y-[150px] lg:translate-y-0 max-w-[320px] lg:max-w-[600px] ${isRtl ? 'lg:translate-x-[20px]' : 'lg:-translate-x-[20px]'}`}>
+        <div className={`relative second-child flex-1 h-[90%] flex-col lg:overflow-y-auto pt-5 lg:pt-12 bg-dark px-6 overlay-clip flex text-xl -translate-y-[150px] lg:translate-y-0 max-w-[320px] lg:max-w-[600px] ${isRtl ? 'lg:translate-x-[20px]' : 'lg:-translate-x-[20px]'}`}>
           <div className="text-clip">
             <div className="text-holder">
               <h1 className="text-4xl font-thin text-white">{slideTitle}</h1>
@@ -191,7 +191,7 @@ const Philosophy: React.FC<PhilosophyProps> = ({ locale }) => {
         </div>
         {/* Navigation buttons */}
         <nav
-          className={`flex flex-col justify-between absolute ${isRtl ? 'left-0' : 'right-0'} top-1/2 slide-nav lg:h-[calc(90%)] -translate-y-1/2`}
+          className={`flex flex-row md:flex-col justify-between absolute ${isRtl ? 'left-0' : 'right-0'} top-1/2 slide-nav  lg:h-[calc(90%)] -translate-y-1/2`}
           aria-label="Slide Navigation"
         >
           {["prev", "next"].map((direction) => (

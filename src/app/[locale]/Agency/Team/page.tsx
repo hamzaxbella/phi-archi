@@ -21,7 +21,6 @@ async function getTeam() {
 const Team = async ({params}) => {
   const {locale} = params
   const data = await getTeam()
-  console.log(data)
   return (
     
     <TeamListTemplate locale={locale} team={data} />

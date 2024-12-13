@@ -6,9 +6,12 @@ import Nav from "@/components/Nav";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { FilterProvider } from "@/context/FilterContext";
-export default async function RootLayout({ children, params }) {
-  const { locale } = await params;
+import AnimationWrapper from "@/components/AnimationWrapper";
+
+export default function RootLayout({ children, params }) {
+  const { locale } = params;
   const isRtl = locale === "ar";
+
   if (!routing.locales.includes(locale)) {
     notFound();
   }
@@ -18,17 +21,19 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body>
-        <header className="max-container">
-          <Nav locale={locale} isRtl={isRtl} />
-        </header>
-        <main className="max-container">
-          <NextIntlClientProvider>
-            <FilterProvider>
-              {children}
-            </FilterProvider>
-          </NextIntlClientProvider>
-        </main>
-        <Footer />
+        <AnimationWrapper>
+          <header className="max-container">
+            <Nav locale={locale} isRtl={isRtl} />
+          </header>
+          <main className="max-container">
+            <NextIntlClientProvider>
+              <FilterProvider>
+                {children}
+              </FilterProvider>
+            </NextIntlClientProvider>
+          </main>
+          <Footer />
+        </AnimationWrapper>
       </body>
     </html>
   );

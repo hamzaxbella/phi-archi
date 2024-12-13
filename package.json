@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@gsap/react": "^2.1.1",
     "@sanity/vision": "^3.64.2",
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
+    "emailjs-com": "^3.2.0",
     "gsap": "^3.12.5",
     "lightgallery": "^2.8.1",
     "next": "15.0.3",
     "next-intl": "^3.25.1",
     "next-sanity": "^9.8.15",
+    "nodemailer": "^6.9.16",
     "photoswipe": "^5.4.4",
     "postcss": "^8.4.49",
     "react": "^18.3.1",
@@ -30,6 +34,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
