@@ -1,7 +1,7 @@
-
 import Wrapper from "@/components/Wrapper";
 import PageTitle from "@/components/PageTitle";
 import SideNav from "@/components/SideNav";
+import { Metadata } from 'next';  
 
 const links = [
   { 
@@ -37,6 +37,35 @@ const layout  = async ({params , children}) => {
       />
     </div>
   )
+}
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const { locale } = params;
+
+  return {
+    title: {
+      en: 'Press & Media',
+      fr: 'Médias & Presse',
+      ar: 'الصحافة والإعلام'
+    }[locale],
+    description: {
+      en: 'Latest news, press releases and media coverage of HLE Architecture',
+      fr: 'Dernières nouvelles, communiqués de presse et couverture médiatique de HLE Architecture',
+      ar: 'آخر الأخبار والبيانات الصحفية والتغطية الإعلامية لـ HLE Architecture'
+    }[locale],
+    openGraph: {
+      title: {
+        en: 'Press & Media',
+        fr: 'Médias & Presse',
+        ar: 'الصحافة والإعلام'
+      }[locale],
+      description: {
+        en: 'Latest news and media coverage',
+        fr: 'Dernières nouvelles et couverture médiatique',
+        ar: 'آخر الأخبار والتغطية الإعلامية'
+      }[locale],
+    }
+  };
 }
 
 export default layout

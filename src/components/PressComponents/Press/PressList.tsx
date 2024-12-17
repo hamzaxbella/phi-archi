@@ -8,6 +8,7 @@ interface Press {
     description : string
     content : string
 }
+
 const getPress = async () => {
     const query = `*[_type == "press"]
     {
