@@ -44,7 +44,7 @@ const ServicesList = ({ locale }: { locale: string }) => {
           key={index}
           className="group relative flex items-center"
         >
-          <span className="bg-dark text-[12px] md:text-base text-nowrap text-white mx-1  hover:bg-white ring-1 ring-dark  hover:text-dark md:py-4 py-2 px-8 rounded-xl transition-colors duration-300">
+          <span className="bg-dark text-[12px] md:text-base text-nowrap text-white mx-1  ring-1 ring-dark  md:py-4 py-2 px-8 rounded-xl transition-colors duration-300">
             {service[locale]}
           </span>
         </div>
