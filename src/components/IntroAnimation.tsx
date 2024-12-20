@@ -81,7 +81,7 @@ const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () =>
     <div className="fixed inset-0 z-50">
       <div 
         ref={overlayRef}
-        className="absolute inset-0 bg-dark"
+        className="absolute inset-0 bg-[#111111]"
         style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }}
       />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8">

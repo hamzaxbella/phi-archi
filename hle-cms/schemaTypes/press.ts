@@ -106,7 +106,18 @@ export default defineType({
             hotspot : true
         },
         validation: (Rule) => Rule.required(),
-      })
+      }),
+      defineField({
+        name: 'createdAt',
+        title: 'Created At',
+        type: 'datetime',
+        options: {
+          dateFormat: 'YYYY-MM-DD',
+          timeFormat: 'HH:mm:ss',
+        },
+        initialValue: () => new Date().toISOString(),
+      }),
+  
   
   ],
 })

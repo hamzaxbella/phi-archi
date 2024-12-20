@@ -4,7 +4,7 @@ import ProjectsGridTemplate from "./ProjectsGridTemplate"
 
 export async function getProjects() {
   const query = `
-    * [_type == "project"] {
+    * [_type == "project"] | order(createdAt desc) {
       title, 
       "currentSlug" : slug.current, 
       description,
@@ -15,9 +15,10 @@ export async function getProjects() {
       "mainImage" : image.asset,
       images,
       "category" : category -> slug.current,
+      createdAt
     }
   `
-  const data = client.fetch(query)
+  const data = await client.fetch(query)
   return data
 }
 

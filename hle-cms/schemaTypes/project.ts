@@ -10,13 +10,12 @@ export default defineType({
       title: 'Name',
       type: 'string',
       validation: (Rule) => Rule.required(),
-
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options : {
+      options: {
         source: 'name',
         maxLength: 96,
       },
@@ -26,40 +25,36 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
           type: 'string',
           validation: (Rule) => Rule.required(),
-
         }),
         defineField({
           name: 'fr',
           title: 'French',
           type: 'string',
           validation: (Rule) => Rule.required(),
-
         }),
         defineField({
           name: 'ar',
           title: 'Arabic',
           type: 'string',
           validation: (Rule) => Rule.required(),
-
         }),
-        ],
+      ],
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
           type: 'text',
-          
         }),
         defineField({
           name: 'fr',
@@ -71,13 +66,13 @@ export default defineType({
           title: 'Arabic',
           type: 'text',
         }),
-        ],
+      ],
     }),
     defineField({
       name: 'location',
       title: 'Location',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
@@ -93,14 +88,13 @@ export default defineType({
           title: 'Arabic',
           type: 'string',
         }),
-        ],
+      ],
     }),
-
     defineField({
       name: 'client',
       title: 'Client',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
@@ -116,14 +110,13 @@ export default defineType({
           title: 'Arabic',
           type: 'string',
         }),
-        ],
+      ],
     }),
-
     defineField({
       name: 'area',
       title: 'Area',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
@@ -139,14 +132,13 @@ export default defineType({
           title: 'Arabic',
           type: 'string',
         }),
-        ],
+      ],
     }),
-
     defineField({
       name: 'budjet',
       title: 'Budjet',
       type: 'object',
-      fields : [
+      fields: [
         defineField({
           name: 'en',
           title: 'English',
@@ -162,9 +154,8 @@ export default defineType({
           title: 'Arabic',
           type: 'string',
         }),
-        ],
+      ],
     }),
-
     defineField({
       name: 'image',
       title: 'Image',
@@ -173,24 +164,30 @@ export default defineType({
         hotspot: true,
       },
       validation: (Rule) => Rule.required(),
-
     }),
-
     defineField({
       name: 'images',
       title: 'Images',
       type: 'array',
       of: [{ type: 'image' }], // Array of images
       validation: (Rule) => Rule.required(),
-
     }),
-
     defineField({
       name: 'category',
       title: 'Category',
       type: 'reference',
       to: [{ type: 'category' }],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'createdAt',
+      title: 'Created At',
+      type: 'datetime',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+        timeFormat: 'HH:mm:ss',
+      },
+      initialValue: () => new Date().toISOString(),
     }),
   ],
 });

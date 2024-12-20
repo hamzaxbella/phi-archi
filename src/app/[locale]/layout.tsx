@@ -9,6 +9,7 @@ import { FilterProvider } from "@/context/FilterContext";
 import AnimationWrapper from "@/components/AnimationWrapper";
 import { Metadata } from 'next';
 import { defaultMetadata } from '../metadata';
+import Motifs from "@/components/Motifs";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const { locale } = params;
@@ -73,8 +74,9 @@ export default function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body>
+      <body className="relative">
         <AnimationWrapper>
+          <Motifs />
           <header className="max-container">
             <Nav locale={locale} isRtl={isRtl} />
           </header>

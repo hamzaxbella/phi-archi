@@ -19,6 +19,7 @@ import logo_bg from './logo-bg.svg'
 import vectorL from './vector-L.svg'
 import vectorH from './vector-H.svg'
 import Avatar from './avatar.jpg'
+import motif from './motif.svg'
 export {
     logo,
     projectsCover,
@@ -40,5 +41,6 @@ export {
     logo_bg,
     vectorL,
     vectorH,
-    Avatar
+    Avatar,
+    motif
 }

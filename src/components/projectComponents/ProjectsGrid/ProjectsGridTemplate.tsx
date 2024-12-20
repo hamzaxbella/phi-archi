@@ -17,6 +17,7 @@ interface Project {
   images: { asset: string }[];
   location: { fr: string; ar: string; en: string };
   title: { fr: string; ar: string; en: string };
+  createdAt: string; // Assuming there's a createdAt field for sorting
 }
 
 interface ProjectsGridProps {
@@ -35,14 +36,14 @@ const ProjectsGridTemplate = ({ data, locale }: ProjectsGridProps) => {
   const prevProjectsCount = useRef(0);
 
   useEffect(() => {
-    if (selectedFilter === "all") {
-      setFilteredData(data);
-    } else {
-      const updatedData = data.filter(
-        (project) => project.category === selectedFilter
-      );
-      setFilteredData(updatedData);
-    }
+    let updatedData = selectedFilter === "all" ? data : data.filter(
+      (project) => project.category === selectedFilter
+    );
+
+    // Sort projects by newest first
+    updatedData = updatedData.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
+    setFilteredData(updatedData);
     setPage(1);
     prevProjectsCount.current = 0;
   }, [selectedFilter, data]);

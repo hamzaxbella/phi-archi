@@ -6,6 +6,8 @@ import press from './press'
 import project from './project'
 import team from './team'
 import testimonials from './testimonials'
+import DescriptionData from './DescriptionData'
+
 export const schemaTypes = [
   project,
   numiricpad,
@@ -15,4 +17,5 @@ export const schemaTypes = [
   awards,
   category,
   team,
+  DescriptionData
 ]

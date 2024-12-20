@@ -1,4 +1,4 @@
-import AboutDescription from '@/components/aboutComponents/AboutDescription'
+import AboutDescription from '@/components/AboutDescription/AboutDescription'
 import NumiricTab from '@/components/aboutComponents/Numiric tab/NumiricTab'
 import Testimonials from '@/components/aboutComponents/Testimonials/Testimonials'
 import React from 'react'

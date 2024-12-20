@@ -10,13 +10,13 @@ interface Press {
 }
 
 const getPress = async () => {
-    const query = `*[_type == "press"]
-    {
+    const query = `*[_type == "press"] | order(createdAt desc) {
       "title" : title,
       "slug" : slug.current,
       "image" : image.asset->url,
       "description" : description,
       "content" : content,
+      createdAt
     }
     `
     const press = await client.fetch(query)

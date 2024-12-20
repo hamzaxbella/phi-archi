@@ -112,6 +112,12 @@ body {
     height: calc(100% - 250px);
   }
 
+
+ .animate-spin-animation {
+   animation: spin-animation 4s infinite;
+ }
+
+
   
 
 
