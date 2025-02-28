@@ -75,7 +75,7 @@ const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () =>
 
   if (!loading) return null;
 
-  const text = "HLE Architecture";
+  const text = "ZYLLUX ARCHITECTURE";
 
   return (
     <div className="fixed inset-0 z-50">
@@ -88,7 +88,7 @@ const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () =>
         <div ref={logoRef} className='relative'>
             <Image src={logo_bg} className='w-[150px] h-[150px] opacity-0 scale-[30]' alt="HLE Architecture" width={100} height={100} />
             <Image src={vectorL} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70px] h-[70px] opacity-0 scale-[30]' alt="HLE Architecture" width={100} height={100} />
-            <Image src={vectorH} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70px] h-[70px] opacity-0 scale-[30]' alt="HLE Architecture" width={100} height={100} />
+            <Image src={vectorL} className='absolute top-1/2 left-1/2  -translate-y-1/2 w-[70px] h-[70px] opacity-0 scale-[30]' alt="HLE Architecture" width={100} height={100} />
         </div>
         <div 
           ref={textRef}
@@ -108,8 +108,8 @@ const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () =>
           ))}
         </div>
         <div ref={quoteRef} className='flex flex-col gap-4 text-white text-center uppercase font-thin tracking-wider'> 
-          <p className='text-md md:text-lg opacity-0 translate-y-[20px]'>ÉCOUTER | ÉDITER | Innover</p>
-          <p className='text-md md:text-lg opacity-0 translate-y-[20px]'>rabat | paris</p>
+          <p className='text-md md:text-lg opacity-0 translate-y-[20px]'>Value | Time | Efficiency</p>
+          <p className='text-md md:text-lg opacity-0 translate-y-[20px]'>Rabat | Dubai</p>
         </div>
         <button 
           ref={buttonRef}
@@ -117,7 +117,7 @@ const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () =>
           className="group text-white hover:bg-white hover:text-dark hover:bg-opacity-90 flex gap-4 border-[.5px] border-opacity-70 border-white rounded-full justify-center items-center py-4 px-12 opacity-0 "
         >
           <p className='text-lg font-thin tracking-wider'>Entrer</p>
-          <Image src={front_arrow} className='w-[35px] h-[20px] invert group-hover:invert-0' alt="HLE Architecture" width={100} height={100} />
+          <Image src={front_arrow} className='w-[35px] h-[20px] invert group-hover:invert-0' alt="ZYLLUX ARCHITECTURE" width={100} height={100} />
         </button>
       </div>
     </div>
