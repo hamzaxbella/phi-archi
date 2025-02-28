@@ -1,12 +1,12 @@
 export const defaultMetadata = {
   title: {
-    default: "HLE Architecture",
-    template: "%s | HLE Architecture",
+    default: "ZLX Architecture",
+    template: "%s | ZLX Architecture",
   },
   description: {
-    en: "HLE Architecture - A premier Moroccan architectural firm delivering innovative, sustainable, and high-quality design solutions across Africa, the Middle East, and Europe.",
-    fr: "HLE Architecture - Cabinet d'architecture marocain de premier plan offrant des solutions de conception innovantes, durables et de haute qualité en Afrique, au Moyen-Orient et en Europe.",
-    ar: "HLE Architecture - شركة معمارية مغربية رائدة تقدم حلول تصميم مبتكرة ومستدامة وعالية الجودة في إفريقيا والشرق الأوسط وأوروبا.",
+    en: "Zlx Architecture - A premier Moroccan architectural firm delivering innovative, sustainable, and high-quality design solutions across Africa, the Middle East, and Europe.",
+    fr: "Zlx Architecture - Cabinet d'architecture marocain de premier plan offrant des solutions de conception innovantes, durables et de haute qualité en Afrique, au Moyen-Orient et en Europe.",
+    ar: "Zlx Architecture - شركة معمارية مغربية رائدة تقدم حلول تصميم مبتكرة ومستدامة وعالية الجودة في إفريقيا والشرق الأوسط وأوروبا.",
   },
   keywords: {
     en: "architecture, architectural design, construction, urban planning, innovative solutions, sustainable architecture, modern design, interior design, project management, Moroccan architecture, African architecture, Middle Eastern architecture, European architecture, building design, residential projects, commercial projects, cultural buildings, luxury architecture, contemporary architecture",

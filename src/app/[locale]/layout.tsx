@@ -30,21 +30,21 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: locale,
-      title: 'HLE Architecture',
+      title: 'ZLX Architecture',
       description: defaultMetadata.description[locale],
-      siteName: 'HLE Architecture',
+      siteName: 'ZLX Architecture',
       images: [
         {
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'HLE Architecture'
+          alt: 'ZLX Architecture'
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'HLE Architecture',
+      title: 'ZLX Architecture',
       description: defaultMetadata.description[locale],
       images: ['/og-image.jpg']
     },
