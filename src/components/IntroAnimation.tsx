@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
-import { logo_bg, vectorL, vectorH , front_arrow } from '../../public';
+import { logo_bg, vectorL , front_arrow } from '../../public';
 const IntroAnimation = ({ loading, onEnter }: { loading: boolean; onEnter: () => void }) => {
   const overlayRef = useRef(null);
   const textRef = useRef(null);
