@@ -121,7 +121,7 @@ const PressListTemplate = ({press, locale}) => {
                   />
                   {/* Overlay with title and description */}
                   <div className='z-10 left-0 top-0 absolute w-full h-full bg-black/20 flex flex-col justify-between  py-4 px-2 md:py-8 md:px-4'>
-                    <h1 className='font-medium uppercase text-white text-3xl tracking-wide'>{pressItem.title[locale]}</h1>
+                    <h1 className='font-medium uppercase text-white text-2xl max-w-[30ch] tracking-wide'>{pressItem.title[locale]}</h1>
                     <p className='font-light text-white text-sm'>{pressItem.description[locale]}</p>
                   </div>
                 </Link>

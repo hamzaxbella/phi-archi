@@ -11,7 +11,7 @@ const Nav = ({ locale , isRtl }) => {
       className="flex py-4 items-center justify-between padding-x md:bg-background md:rounded-md md:my-2 md:margin-x"
     >
       <Link href={'/'}>
-        <Image src={logo} width={30} height={30} alt="logo" />
+        <Image src={logo} width={40} height={40} alt="logo" />
       </Link>
       <div className="flex md:flex-row-reverse items-center gap-6">
         <HiringButton isRtl={isRtl} locale={locale} />

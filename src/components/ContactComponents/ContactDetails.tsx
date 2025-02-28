@@ -11,8 +11,8 @@ const ContactDetails = ({locale}) => {
     <div className="flex flex-col gap-4 py-8">
         <p className="text-gray-600">{description[locale]}</p>
         <div className="flex flex-col ">
-            <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Email: info@arch-studio.com</p>
-            <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Phone: +212 456 7890</p>
+            <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Email: zyllux.agency@gmail.com</p>
+            <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Phone: +212 00 00 00 00 00 </p>
             <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Address: 123 Main St, City, Country</p>
             <p className="text-gray-600 border-t py-2 font-bold text-[12px] tracking-wider uppercase border-dark">Address: 456 Main St, City, Country</p>
         </div>

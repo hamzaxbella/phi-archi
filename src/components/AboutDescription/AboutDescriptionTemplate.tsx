@@ -110,9 +110,9 @@ const AboutDescriptionTemplate = ({ locale, description }) => {
       >
         <PageTitle
           label={{
-            en: "HLE-architecture",
-            fr: "HLE-architecture",
-            ar: "HLE-architecture",
+            en: "Zyllux Architecture",
+            fr: "Zyllux Architecture",
+            ar: "Zyllux Architecture",
           }}
           locale={locale}
         />

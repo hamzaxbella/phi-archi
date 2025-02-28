@@ -1,4 +1,4 @@
-import logo from './logosvg.svg'
+import logo from './logo.png'
 import projectsCover from './projectsCover.jpg'
 import agencyCover from './agencyCover.jpg'
 import contactCover from './contactCover.jpg'

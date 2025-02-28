@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'HLE-cms',
+  title: 'Temp01',
 
-  projectId: 'dig3w94b',
+  projectId: '67leycr0',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
